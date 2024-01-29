@@ -1,20 +1,22 @@
-
 ## todo-list
 
-### 01/27 Study
+### 01/30 Study
 
-This is study things in weekend. Hint is jun branch. Study these things.
+This is next study things. Fix some bugs and enhance our app feature.
 
-- useState
-- onChange Event
-- onClick Event
+1. Remove text in a text box when click the value.
+2. Do not add todo when text box value empty.
+3. Add todo when typing text and press ENTER key.
 
-1. create react application
-    - vite or CRA(Create React App)
-    - CRA is easy!
-2. create todo list
-    - no test code
-    - view input text box and button
-    - when click button after typing then add todo
+### CURRENT
 
-<img src="./example.gif" alt="example" />
+<img src="./example-01.gif" alt="example" />
+
+### AFTER
+
+<img src="./example-02.gif" alt="example" />
+
+### History
+
+- [01/27 Study](./study/2024-01-27-study.md)
+
