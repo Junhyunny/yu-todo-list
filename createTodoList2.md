@@ -1,0 +1,27 @@
+## What I learned
+
+1. handleChange
+
+```ts
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setText(event.target.value)
+  }
+  return <input
+        value = {text}
+        onChange = {handleChange}
+        type = "text"
+        / >
+```
+フォームのonChange時に発火するイベントハンドラ．event(React.ChangeEvent:target,typeを持つオブジェクト)を引数に取り，valueにtextをもたせる．これを実装しないと，text内の文字を置き換えるという動作ができなかった．
+
+
+2. handleSubmit
+
+```ts
+  const handleSubmit: FormEventHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onClickAddList()
+    event.preventDefault()
+  }
+  return <form onSubmit = {handleSubmit} > </ form>
+```
+フォーム内でenterキーを押すとsubmitが走り，postリクエストが飛びリロードするが，event.preventDefault()で制御している．ここでは関数(onClickAddList)を動かす機能を果たしている．
