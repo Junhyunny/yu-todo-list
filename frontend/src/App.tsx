@@ -1,4 +1,4 @@
-import React, {FormEventHandler, useEffect, useState} from 'react';
+import React, {KeyboardEventHandler, useEffect, useState} from 'react';
 import './App.css';
 
 function App() {
@@ -20,9 +20,11 @@ function App() {
         setText(event.target.value)
     }
 
-    const handleSubmit: FormEventHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        onClickAddList()
-        event.preventDefault()
+    const keyDownHandler = (e: React.KeyboardEvent<HTMLDivElement>) => {
+        const key = e.code
+        if (key === 'Enter'){
+            return onClickAddList()
+        }
     }
 
     useEffect(() => {
@@ -35,14 +37,13 @@ function App() {
         <div className="App">
             <header>TodoList</header>
             <div>
-                <form onSubmit={handleSubmit}>
                     <input
                         value={text}
                         onChange={handleChange}
                         type="text"
+                        onKeyDown={keyDownHandler}
                     />
                     <button onClick={onClickAddList}>Add to List</button>
-                </form>
                 <ul>
                     {todoList.map((todo, index) => {
                         return (
