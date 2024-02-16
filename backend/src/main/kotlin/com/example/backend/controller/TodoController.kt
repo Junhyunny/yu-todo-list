@@ -1,10 +1,8 @@
 import DefaultTodo.Todo
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/todos")
 class TodoController {
     private val defaultTodos = listOf(
         Todo(1, "Hello"),
@@ -13,7 +11,7 @@ class TodoController {
         Todo(4, "Tanzu")
     )
 
-    @GetMapping
+    @GetMapping(value = ["todos"])
     fun getTodoList(): List<Unit> {
         return defaultTodos.map { it.task }
     }
