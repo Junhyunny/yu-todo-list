@@ -1,4 +1,5 @@
-import DefaultTodo.Todo
+import com.example.backend.DefaultTodo.Todo
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -11,7 +12,8 @@ class TodoController {
         Todo(4, "Tanzu")
     )
 
-    @GetMapping(value = ["todos"])
+    @GetMapping(name = "/todos")
+    @CrossOrigin
     fun getTodoList(): List<Unit> {
         return defaultTodos.map { it.task }
     }
