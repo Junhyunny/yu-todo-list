@@ -14,9 +14,9 @@ class WebConfig : WebMvcConfigurer {
 
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/todos")
-            .allowedOrigins("http://localhost:3000") // フロントエンドのオリジン
-            .allowedMethods("GET") // 許可するHTTPメソッド
-            .allowCredentials(true) // 許可するクレデンシャル情報（Cookieなど）
+            .allowedOrigins("http://localhost:3000")
+            .allowedMethods("GET")
+            .allowCredentials(true)
     }
 }
 
