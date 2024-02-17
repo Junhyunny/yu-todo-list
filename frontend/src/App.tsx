@@ -31,9 +31,9 @@ function App() {
 
   useEffect(() => {
     const apiUrl = 'http://localhost:3000/todos';
-
     axios.get(apiUrl)
         .then(response => {
+          console.log(response)
           setTodoList(response.data)
         })
         .catch(error => {
